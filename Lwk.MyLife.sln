@@ -13,7 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lwk.MyLife.Ids4.Server", "L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lwk.MyLife.Core.Package", "Lwk.MyLife.Core.Package\Lwk.MyLife.Core.Package.csproj", "{BD31E77B-C54A-4D6B-977D-7EE292D7FB4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lwk.MyLife.IdentityServer4", "Lwk.MyLife.IdentityServer4\Lwk.MyLife.IdentityServer4.csproj", "{68C01418-D182-4258-B2DC-DCE79B08579A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lwk.MyLife.IdentityServer4", "Lwk.MyLife.IdentityServer4\Lwk.MyLife.IdentityServer4.csproj", "{68C01418-D182-4258-B2DC-DCE79B08579A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7D7AD5A4-150B-47AF-B5AF-75997EE46BD9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{7350F5EE-0631-4D0A-8CBE-03EF9AA8A933}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,14 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{65019A7A-F5FC-45F3-92D9-05015BF421DE} = {7350F5EE-0631-4D0A-8CBE-03EF9AA8A933}
+		{0D8F375D-0068-4135-BBC8-A338E1BA1E74} = {7D7AD5A4-150B-47AF-B5AF-75997EE46BD9}
+		{0C4E6A7D-8279-420E-9BE4-7A912C75254F} = {7350F5EE-0631-4D0A-8CBE-03EF9AA8A933}
+		{6E072389-69F7-4EEE-811F-7B0D9C47E771} = {7D7AD5A4-150B-47AF-B5AF-75997EE46BD9}
+		{BD31E77B-C54A-4D6B-977D-7EE292D7FB4A} = {7D7AD5A4-150B-47AF-B5AF-75997EE46BD9}
+		{68C01418-D182-4258-B2DC-DCE79B08579A} = {7D7AD5A4-150B-47AF-B5AF-75997EE46BD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEA0289F-B687-465C-8DE7-E0986DD145F4}
