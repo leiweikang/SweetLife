@@ -29,9 +29,9 @@ public class SugarSqlController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpPut]
-    public async Task<IActionResult> Update()
+    public async Task<IActionResult> Update([FromBody] StudentDto studentDto)
     {
-        return Ok("hello world!");
+        return Ok($"hello world!:{await _dbContext.StudentDto.UpdateAsync(studentDto)}");
     }
 
     /// <summary>
@@ -39,19 +39,29 @@ public class SugarSqlController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpDelete]
-    public async Task<IActionResult> Delete()
+    public async Task<IActionResult> Delete(string id)
     {
-        return Ok("hello world!");
+        return Ok($"hello world!{await _dbContext.StudentDto.DeleteByIdAsync(id)}");
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <returns></returns>
-    [HttpGet]
-    public async Task<IActionResult> Get()
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(int id)
     {
-        return Ok("Get hello world!");
+        return Ok(await _dbContext.StudentDto.GetByIdAsync(id));
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("Single/{id}")]
+    public async Task<IActionResult> Single(int id)
+    {
+        return Ok(await _dbContext.StudentDto.GetSingleAsync(x => x.Id == id));
     }
 
     /// <summary>
@@ -61,6 +71,6 @@ public class SugarSqlController : ControllerBase
     [HttpGet("List")]
     public async Task<IActionResult> List()
     {
-        return Ok("hello world!");
+        return Ok(await _dbContext.StudentDto.GetListAsync(x => x.Id > 10));
     }
 }

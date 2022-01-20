@@ -8,6 +8,7 @@ namespace Lwk.MyLife.Dtos;
 [SugarTable("Student")]
 public class StudentDto
 {
+    [SugarColumn(IsPrimaryKey = true)]
     public int Id { get; set; }
 
     public string? SchoolId { get; set; }
