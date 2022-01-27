@@ -12,7 +12,9 @@ builder.Host.UseSerilog((hbc, lc) => lc
 //builder.Services.AddTransient(typeof(DbContext));//非线程安全的使用AddTransient
 builder.Services.AddSingleton(typeof(DbContext));//组件始终是共享的
 //builder.Services.AddScoped(typeof(DbContext));//主要原因是从数据库获得的实体将附加到请求中的所有组件看到的相同上下文
-builder.Services.AddControllers()
+builder.Services
+    .AddConfig(builder.Configuration)
+    .AddControllers()
                 .AddJsonOptions(config =>
                 {
                     config.JsonSerializerOptions.PropertyNamingPolicy = null;//解决首字母小写问题

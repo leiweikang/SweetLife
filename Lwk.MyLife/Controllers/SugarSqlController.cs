@@ -1,4 +1,6 @@
-﻿using Lwk.MyLife.Dtos;
+﻿using Lwk.MyLife.Core.CommonDtos;
+using Lwk.MyLife.Dtos;
+using Microsoft.Extensions.Options;
 
 namespace Lwk.MyLife.Controllers;
 
@@ -8,10 +10,12 @@ public class SugarSqlController : ControllerBase
 {
 
     private readonly DbContext _dbContext;
+    private readonly IOptions<CustomerConfigDto> _options;
 
-    public SugarSqlController(DbContext dbContext)
+    public SugarSqlController(DbContext dbContext, IOptions<CustomerConfigDto> options)
     {
         _dbContext = dbContext;
+        _options = options;
     }
 
     /// <summary>
@@ -51,6 +55,7 @@ public class SugarSqlController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
+        var test = _options.Value;
         return Ok(await _dbContext.StudentDto.GetByIdAsync(id));
     }
 
